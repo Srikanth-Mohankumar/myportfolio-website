@@ -128,7 +128,31 @@
             <p>&copy; 2024 Srikanth Mohankumar's Portfolio. Last updated: July 23, 2024.</p>
         </div>
     </footer>
-
+    <script>
+        // JavaScript to create and animate stars
+        document.addEventListener('DOMContentLoaded', function() {
+            const starField = document.createElement('div');
+            starField.className = 'stars';
+            document.body.appendChild(starField);
+        
+            // Function to create a star
+            function createStar() {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = `${Math.random() * 3 + 1}px`;
+                star.style.height = star.style.width;
+                star.style.top = `${Math.random() * 100}vh`;
+                star.style.left = `${Math.random() * 100}vw`;
+                star.style.animation = `glitter ${Math.random() * 1 + 0.5}s infinite`;
+                starField.appendChild(star);
+            }
+        
+            // Create a number of stars
+            for (let i = 0; i < 150; i++) {
+                createStar();
+            }
+        });
+        </script>
     <script src="scripts.js"></script>
 </body>
 </html>
