@@ -1,0 +1,316 @@
+/* Font and base styles */
+body {
+    font-family: 'Raleway', sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+    --header-bg: #333;
+    --header-color: white;
+    --button-bg: #555;
+    --button-color: white;
+    --project-bg: #f4f4f4;
+    --project-color: #333;
+    --form-bg: #fff;
+    --form-color: #333;
+    --footer-bg: #333;
+    --footer-color: white;
+    --background-color: white;
+    --text-color: #333;
+}
+
+body.light-mode {
+    --header-bg: #fff;
+    --header-color: #333;
+    --button-bg: #ddd;
+    --button-color: #333;
+    --project-bg: #333;
+    --project-color: #fff;
+    --form-bg: #333;
+    --form-color: #fff;
+    --footer-bg: #fff;
+    --footer-color: #333;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+}
+
+body.dark-mode {
+    --header-bg: #333;
+    --header-color: white;
+    --button-bg: #555;
+    --button-color: white;
+    --project-bg: #444;
+    --project-color: white;
+    --form-bg: #444;
+    --form-color: white;
+    --footer-bg: #333;
+    --footer-color: white;
+    --background-color: #222;
+    --text-color: white;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-color);
+    text-align: left;
+    padding: 2rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: var(--header-color);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--button-bg);
+}
+
+header nav button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav button:hover {
+    background-color: var(--button-color);
+    color: var(--button-bg);
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em; /* Space between photo and text */
+    margin-bottom: 2rem;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--button-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+    text-align: left;
+}
+
+.profile-info h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.profile-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+nav a:hover {
+    color: var(--button-bg);
+}
+
+#theme-toggle {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: var(--button-color);
+    color: var(--button-bg);
+}
+
+main {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--text-color);
+    padding-bottom: 0.5rem;
+}
+
+.experience, .project {
+    background-color: var(--project-bg);
+    color: var(--project-color);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.experience h3, .project h3 {
+    margin-top: 0;
+}
+
+.experience p {
+    margin-bottom: 0;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    z-index: 10;
+    transition: opacity 0.3s;
+}
+
+.experience:hover .tooltip {
+    display: block;
+    opacity: 1;
+}
+
+form {
+    background-color: var(--form-bg);
+    color: var(--form-color);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+form button:hover {
+    background-color: var(--button-color);
+    color: var(--button-bg);
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.contact-icon i {
+    font-size: 2rem;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.contact-icon:hover i {
+    color: var(--button-bg);
+}
+
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
